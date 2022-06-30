@@ -1,20 +1,27 @@
 {
   "name": "ukit",
   "version": "0.0.0",
+  "private": false,
   "description": "UKit",
-  "repository": "git@github.com:frangte/ukit.git",
   "author": "nakhoa <nakhoa17@gmail.com>",
   "license": "MIT",
-  "private": false,
+  "repository": "git@github.com:frangte/ukit.git",
   "scripts": {
-    "story": "histoire dev"
+    "story": "histoire dev",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "peerDependencies": {
     "vue": "^3.2.37"
   },
+  "dependencies": {
+    "vue": "^3.2.37"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
     "@vitejs/plugin-vue": "^2.3.3",
     "autoprefixer": "^10.4.7",
+    "eslint": "^8.18.0",
     "histoire": "^0.7.8",
     "postcss": "^8.4.14",
     "rollup": "^2.75.7",
@@ -22,9 +29,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-tailwindcss": "^1.0.0",
     "rollup-plugin-vue": "^6.0.0",
-    "tailwindcss": "^3.1.4"
-  },
-  "dependencies": {
-    "vue": "^3.2.37"
+    "tailwindcss": "^3.1.4",
+    "typescript": "^4.7.4"
   }
 }

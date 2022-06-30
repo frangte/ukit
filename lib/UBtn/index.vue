@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { defineProps, computed } from 'vue'
+import { computed, defineProps } from 'vue'
 import { objectHasKey } from '../../utils/index.js'
 
 const props = defineProps({
@@ -17,14 +17,14 @@ const props = defineProps({
     default: 'white',
     validator(varian) {
       return objectHasKey(VARIANS, varian)
-    }
+    },
   },
   size: {
     type: String,
     default: 'md',
     validator(size) {
       return objectHasKey(SIZES, size)
-    }
+    },
   },
   disabled: {
     type: Boolean,
@@ -42,12 +42,12 @@ const classes = computed(() => {
 
 <script>
 export const VARIANS = {
-  white: 'bg-white text-red-800',
-  black: '',  
-  blue: '',
-  red: '',
-  green: '',
-  yellow: '',
+  'white': 'bg-white text-red-800',
+  'black': '',
+  'blue': '',
+  'red': '',
+  'green': '',
+  'yellow': '',
   'text': '',
   'text-dark': '',
 }
@@ -60,6 +60,6 @@ export const SIZES = {
   xl: '',
 }
 export default {
-  name: 'UBtn'
+  name: 'UBtn',
 }
 </script>

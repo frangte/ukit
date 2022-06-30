@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import UBtn from './index.vue';
+import UBtn from './index.vue'
 </script>
