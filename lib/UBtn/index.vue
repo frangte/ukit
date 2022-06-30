@@ -1,6 +1,7 @@
 <template>
   <button
     type="button"
+    class="uk-shawdow-md"
     :class="classes"
   >
     <slot />
@@ -8,8 +9,9 @@
 </template>
 
 <script setup>
-import { computed, defineProps } from 'vue'
 import { objectHasKey } from '../../utils/index.js'
+
+const base = 'uk-rounded-md uk-border-b-2 uk-border-b-red-900'
 
 const props = defineProps({
   varian: {
@@ -33,7 +35,7 @@ const props = defineProps({
 })
 
 const classes = computed(() => {
-  const cls = []
+  const cls = [base]
   cls.push(VARIANS[props.varian])
   cls.push(SIZES[props.size])
   return cls.join(' ')

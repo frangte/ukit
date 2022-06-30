@@ -1,1 +1,1 @@
-import './dist/index.css'
+import './tailwind.css'
