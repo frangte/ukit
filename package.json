@@ -1,6 +1,6 @@
 {
-  "name": "ukit",
-  "version": "0.0.0",
+  "name": "ukit-tw",
+  "version": "0.0.1",
   "private": false,
   "description": "UKit",
   "author": "nakhoa <nakhoa17@gmail.com>",
@@ -10,8 +10,10 @@
     "dist"
   ],
   "scripts": {
-    "b": "vite build",
-    "s": "histoire dev",
+    "t": "tailwindcss -i ./tailwind.css -o ./dist.local/index.css --watch",
+    "b": "vite build && tailwindcss -i ./tailwind.css -o ./dist/index.css -m",
+    "hd": "histoire dev",
+    "hb": "tailwindcss -i ./tailwind.css -o ./dist.local/index.css -m && histoire build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
