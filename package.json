@@ -10,7 +10,8 @@
     "dist"
   ],
   "scripts": {
-    "b": "vite build",
+    "t": "tailwindcss -i ./tailwind.css -o ./dist/index.css --watch",
+    "b": "tailwindcss -i ./tailwind.css -o ./dist/index.css -m && vite build",
     "s": "histoire dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
