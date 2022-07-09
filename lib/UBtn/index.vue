@@ -32,22 +32,16 @@
 </template>
 
 <script setup>
-import { objectHasKey } from '../../utils/index.js'
-
 const props = defineProps({
   varian: {
     type: String,
     default: 'white',
-    validator(varian) {
-      return objectHasKey(VARIANS_BG, varian)
-    },
+    validator: varian => Object.hasOwn(VARIANS_BG, varian),
   },
   size: {
     type: String,
     default: 'md',
-    validator(size) {
-      return objectHasKey(SIZES, size)
-    },
+    validator: size => Object.hasOwn(SIZES, size),
   },
   block: {
     type: Boolean,

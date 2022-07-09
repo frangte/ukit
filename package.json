@@ -11,8 +11,9 @@
   ],
   "scripts": {
     "t": "tailwindcss -i ./tailwind.css -o ./dist.local/index.css --watch",
-    "b": "vite build && tailwindcss -i ./tailwind.css -o ./dist/index.css -m ",
-    "s": "histoire dev",
+    "b": "vite build && tailwindcss -i ./tailwind.css -o ./dist/index.css -m",
+    "hd": "histoire dev",
+    "hb": "tailwindcss -i ./tailwind.css -o ./dist.local/index.css -m && histoire build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
