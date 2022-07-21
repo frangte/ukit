@@ -2,17 +2,17 @@
   <Story title="Button">
     <Variant title="Sizes">
       <div class="uk-flex uk-justify-center uk-items-center uk-h-96 uk-w-96 uk-flex-col uk-gap-3">
-        <UBtn size="xs" class="w-full">
-          Size xs
+        <UBtn size="sm" class="w-full">
+          Size sm
         </UBtn>
         <UBtn size="md">
           Size md
         </UBtn>
-        <UBtn size="md" block>
-          Block
-        </UBtn>
-        <UBtn size="xl">
+        <UBtn size="lg">
           Size xl
+        </UBtn>
+        <UBtn block>
+          Block Button
         </UBtn>
       </div>
     </Variant>
