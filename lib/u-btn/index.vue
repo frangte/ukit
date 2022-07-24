@@ -48,39 +48,39 @@ const props = defineProps({
   },
 })
 
-const base = 'uk-font-medium uk-rounded-md uk-inline-flex'
+const base = 'u-font-medium u-rounded-md u-inline-flex'
 
 const classes = computed(() => {
   const cls = [base]
   cls.push(VARIANS_BG[props.varian])
   cls.push(VARIANS_TEXT[props.varian])
   cls.push(SIZES[props.size])
-  cls.push(props.block ? 'uk-w-full uk-justify-center' : '')
-  cls.push(props.disabled ? 'uk-cursor-not-allowed uk-opacity-50' : 'uk-cursor-pointer')
+  cls.push(props.block ? 'u-w-full u-justify-center' : '')
+  cls.push(props.disabled ? 'u-cursor-not-allowed u-opacity-50' : 'u-cursor-pointer')
   return cls.join(' ')
 })
 </script>
 
 <script>
 export const VARIANS_BG = {
-  white: 'uk-bg-gray-100 uk-text-gray-900 uk-border-b-2 uk-border-gray-300 hover:uk-bg-gray-100 active:uk-bg-gray-200',
-  primary: 'uk-bg-primary-base uk-text-white uk-border-b-2 uk-border-primary-dk2 active:uk-bg-primary-dk1',
-  success: 'uk-bg-green-base uk-text-white uk-border-b-2 uk-border-green-dk2 hover:uk-bg-green-lg1 active:uk-bg-green-dk1',
-  error: 'uk-bg-red-base uk-text-white uk-border-b-2 uk-border-red-dk2 hover:uk-bg-red-lg1 active:uk-bg-red-dk1',
-  warning: 'uk-bg-yellow-base uk-text-gray-600 uk-border-b-2 uk-border-yellow-dk2 hover:uk-bg-yellow-lg1 active:uk-bg-yellow-dk1',
+  white: 'u-bg-gray-100 u-text-gray-900 u-border-b-2 u-border-gray-300 hover:u-bg-gray-100 active:u-bg-gray-200',
+  primary: 'u-bg-primary-base u-text-white u-border-b-2 u-border-primary-dk2 active:u-bg-primary-dk1',
+  success: 'u-bg-green-base u-text-white u-border-b-2 u-border-green-dk2 hover:u-bg-green-lg1 active:u-bg-green-dk1',
+  error: 'u-bg-red-base u-text-white u-border-b-2 u-border-red-dk2 hover:u-bg-red-lg1 active:u-bg-red-dk1',
+  warning: 'u-bg-yellow-base u-text-gray-600 u-border-b-2 u-border-yellow-dk2 hover:u-bg-yellow-lg1 active:u-bg-yellow-dk1',
 }
 export const VARIANS_TEXT = {
-  white: 'uk-text-gray-900',
-  primary: 'uk-text-white',
-  success: 'uk-text-white',
-  error: 'uk-text-white',
-  warning: 'uk-text-gray-600',
+  white: 'u-text-gray-900',
+  primary: 'u-text-white',
+  success: 'u-text-white',
+  error: 'u-text-white',
+  warning: 'u-text-gray-600',
 }
 
 export const SIZES = {
-  sm: 'uk-px-2.5 uk-py-1.5 uk-text-xs',
-  md: 'uk-px-4 uk-py-2 uk-text-sm',
-  lg: 'uk-px-6 uk-py-3 uk-text-base',
+  sm: 'u-px-2.5 u-py-1.5 u-text-xs',
+  md: 'u-px-4 u-py-2 u-text-sm',
+  lg: 'u-px-6 u-py-3 u-text-base',
 }
 
 export default {

@@ -1,20 +1,21 @@
 <template>
-  <div>
-    <label class="block text-sm font-medium text-gray-700">
+  <div :class="wrapperClasses">
+    <label class="u-block u-text-sm u-font-medium">
       {{ label }}
     </label>
-    <div class="mt-1">
+    <div class="u-mt-1">
       <input
         v-model="computeValue"
         :type="type"
         :placeholder="placeholder"
-        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+        :class="classes"
+        :disabled="disabled"
       >
     </div>
     <slot name="help-text">
       <div>
-        <p v-show="showHelpText" class="uk-mt-1 uk-text-sm">
-          {{ }}
+        <p v-show="showHelpText" class="u-mt-1 u-text-sm">
+          {{ helpText }}
         </p>
       </div>
     </slot>
@@ -26,13 +27,21 @@ const props = defineProps({
   modelValue: {
     type: [String, Number],
   },
+  block: {
+    type: Boolean,
+    default: false,
+  },
   label: {
     type: String,
-    required: false,
+    required: true,
   },
   helpText: {
     type: String,
     default: '',
+  },
+  size: {
+    type: String,
+    default: 'md',
   },
   type: {
     type: String,
@@ -67,19 +76,27 @@ const showHelpText = computed(() => {
   return !!props.helpText
 })
 
-const inputClasses = computed(() => { return '' })
+const base = 'u-block u-shadow-sm sm:u-text-sm u-border-gray-300 u-rounded-md u-border'
+const focus = 'focus:u-outline-none focus:u-ring focus:u-ring-offset-2 focus:u-ring-2'
+
+const classes = computed(() => {
+  const cls = [base, focus]
+  cls.push(SIZES[props.size])
+  cls.push(props.block ? 'u-w-full' : '')
+  cls.push(props.disabled ? 'u-cursor-not-allowed u-opacity-50' : 'u-cursor-pointer')
+  return cls.join(' ')
+})
+
+const wrapperClasses = computed(() => {
+  return props.block ? 'u-w-full' : ''
+})
 </script>
 
 <script>
 export const SIZES = {
-  xs: 'uk-px-2.5 uk-py-1.5 uk-text-xs',
-  // sm: 'uk-px-3 uk-py-2 uk-text-sm',
-  md: 'uk-px-4 uk-py-2 uk-text-sm',
-  // lg: 'uk-px-4 uk-py-2 uk-text-base',
-  xl: 'uk-px-6 uk-py-3 uk-text-base',
-}
-
-export const VARIANS_TEXT = {
+  sm: 'u-px-2.5 u-py-1.5 u-text-xs',
+  md: 'u-px-4 u-py-2 u-text-base',
+  lg: 'u-px-6 u-py-3 u-text-base',
 }
 
 export default {

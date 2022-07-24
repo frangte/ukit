@@ -1,10 +1,13 @@
 <template>
   <Story title="Input">
     <Variant title="Sizes">
-      <div class="uk-flex uk-justify-center uk-items-center uk-h-96 uk-w-96 uk-flex-col uk-gap-3">
-        <UInput size="sm" class="w-full">
-          Size sm
-        </UInput>
+      <div class="u-p-2">
+        <UInput
+          v-model="text"
+          label="Simple text input"
+          size="md"
+          varian="error"
+        />
       </div>
     </Variant>
   </Story>
@@ -12,4 +15,6 @@
 
 <script setup>
 import UInput from './index.vue'
+
+const text = ref('Change me')
 </script>

@@ -13,7 +13,7 @@ const {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  prefix: 'uk-',
+  prefix: 'u-',
   content: ['./lib/**/*.vue'],
   theme: {
     colors: {
