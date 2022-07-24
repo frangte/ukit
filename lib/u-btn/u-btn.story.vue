@@ -1,7 +1,7 @@
 <template>
   <Story title="Button">
     <Variant title="Sizes">
-      <div class="u-flex u-justify-center u-items-center u-h-96 u-w-96 u-flex-col u-gap-3">
+      <div class="u-flex u-flex-col u-gap-2 u-p-2">
         <UBtn size="sm" class="w-full">
           Size sm
         </UBtn>
@@ -18,7 +18,7 @@
     </Variant>
 
     <Variant title="Variants">
-      <div class="u-flex u-justify-center u-items-center u-h-96 u-w-96 u-flex-col u-gap-3">
+      <div class="u-flex u-flex-col u-gap-2 u-p-2">
         <UBtn varian="primary">
           Primary
         </UBtn>
