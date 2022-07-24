@@ -29,22 +29,10 @@
         />
         <UInput
           v-model="text"
-          label="Error"
+          label="Error input"
           size="md"
-          varian="error"
           help-text="Message error"
-        />
-        <UInput
-          v-model="text"
-          label="Warning"
-          size="md"
-          varian="warning"
-        />
-        <UInput
-          v-model="text"
-          label="Success"
-          size="md"
-          varian="success"
+          error
         />
       </div>
     </Variant>

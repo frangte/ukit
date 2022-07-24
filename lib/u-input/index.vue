@@ -1,6 +1,9 @@
 <template>
   <div :class="wrapperClasses">
-    <label class="u-block u-text-sm u-font-medium u-text-gray-700">
+    <label
+      class="u-block u-text-sm u-font-medium"
+      :class="error ? 'u-text-red-lt1' : 'u-text-gray-600'"
+    >
       {{ label }}
     </label>
     <div class="u-mt-1">
@@ -13,15 +16,13 @@
       >
     </div>
     <slot name="help-text">
-      <div>
-        <p
-          v-show="showHelpText"
-          class="u-mt-1 u-text-sm"
-          :class="VARIANS_TEXT[varian]"
-        >
-          {{ helpText }}
-        </p>
-      </div>
+      <p
+        v-show="showHelpText"
+        class="u-mt-1 u-text-xs"
+        :class="error ? 'u-text-red-lt1' : ''"
+      >
+        {{ helpText }}
+      </p>
     </slot>
   </div>
 </template>
@@ -42,6 +43,10 @@ const props = defineProps({
   helpText: {
     type: String,
     default: '',
+  },
+  error: {
+    type: Boolean,
+    default: false,
   },
   size: {
     type: String,
@@ -82,11 +87,11 @@ const showHelpText = computed(() => {
 })
 
 const base = 'u-px-3 u-shadow-sm u-border-gray-300 u-rounded-md u-border'
-const focus = 'focus:u-outline-none focus:u-ring focus:u-ring-offset-2 focus:u-ring-2'
+const focus = 'focus:u-outline-none focus:u-ring focus:u-ring-2 focus:ring-offset-2'
 
 const classes = computed(() => {
   const cls = [base, focus]
-  cls.push(VARIANS[props.varian])
+  cls.push(props.error ? 'u-border-red-lt1 u-ring-red-lt1 focus:u-border-red-lt1 u-text-red-lt1' : 'u-ring-gray-200 u-border-gray-200')
   cls.push(SIZES[props.size])
   cls.push(props.block ? 'u-w-full' : '')
   cls.push(props.disabled ? 'u-cursor-not-allowed u-opacity-50' : 'u-cursor-pointer')
@@ -94,7 +99,9 @@ const classes = computed(() => {
 })
 
 const wrapperClasses = computed(() => {
-  return props.block ? 'u-w-full' : ''
+  const cls = []
+  cls.push(props.block ? 'u-w-full' : '')
+  return cls.join(' ')
 })
 </script>
 
@@ -103,20 +110,6 @@ export const SIZES = {
   sm: 'u-py-1.5 u-text-xs',
   md: 'u-py-2 u-text-md',
   lg: 'u-py-3 u-text-base',
-}
-
-const VARIANS = {
-  primary: 'u-ring-primary-lt1',
-  error: 'u-ring-red-lt1',
-  warning: 'u-ring-yellow-dk1',
-  success: 'u-ring-green',
-}
-
-const VARIANS_TEXT = {
-  primary: 'u-text-primary-lt1',
-  error: 'u-text-red-lt1',
-  warning: 'u-text-yellow-dk1',
-  success: 'u-text-green',
 }
 
 export default {
