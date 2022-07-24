@@ -1,6 +1,6 @@
 <template>
   <div :class="wrapperClasses">
-    <label class="u-block u-text-sm u-font-medium">
+    <label class="u-block u-text-sm u-font-medium u-text-gray-700">
       {{ label }}
     </label>
     <div class="u-mt-1">
@@ -14,7 +14,11 @@
     </div>
     <slot name="help-text">
       <div>
-        <p v-show="showHelpText" class="u-mt-1 u-text-sm">
+        <p
+          v-show="showHelpText"
+          class="u-mt-1 u-text-sm"
+          :class="VARIANS_TEXT[varian]"
+        >
           {{ helpText }}
         </p>
       </div>
@@ -53,6 +57,7 @@ const props = defineProps({
   },
   varian: {
     type: String,
+    default: 'primary',
   },
   disabled: {
     type: Boolean,
@@ -76,11 +81,12 @@ const showHelpText = computed(() => {
   return !!props.helpText
 })
 
-const base = 'u-block u-shadow-sm sm:u-text-sm u-border-gray-300 u-rounded-md u-border'
+const base = 'u-px-3 u-shadow-sm u-border-gray-300 u-rounded-md u-border'
 const focus = 'focus:u-outline-none focus:u-ring focus:u-ring-offset-2 focus:u-ring-2'
 
 const classes = computed(() => {
   const cls = [base, focus]
+  cls.push(VARIANS[props.varian])
   cls.push(SIZES[props.size])
   cls.push(props.block ? 'u-w-full' : '')
   cls.push(props.disabled ? 'u-cursor-not-allowed u-opacity-50' : 'u-cursor-pointer')
@@ -94,9 +100,23 @@ const wrapperClasses = computed(() => {
 
 <script>
 export const SIZES = {
-  sm: 'u-px-2.5 u-py-1.5 u-text-xs',
-  md: 'u-px-4 u-py-2 u-text-base',
-  lg: 'u-px-6 u-py-3 u-text-base',
+  sm: 'u-py-1.5 u-text-xs',
+  md: 'u-py-2.5 u-text-md',
+  lg: 'u-py-4 u-text-base',
+}
+
+const VARIANS = {
+  primary: 'u-ring-primary-lt1',
+  error: 'u-ring-red-lt1',
+  warning: 'u-ring-yellow-dk1',
+  success: 'u-ring-green',
+}
+
+const VARIANS_TEXT = {
+  primary: 'u-text-primary-lt1',
+  error: 'u-text-red-lt1',
+  warning: 'u-text-yellow-dk1',
+  success: 'u-text-green',
 }
 
 export default {
