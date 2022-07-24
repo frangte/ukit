@@ -101,8 +101,8 @@ const wrapperClasses = computed(() => {
 <script>
 export const SIZES = {
   sm: 'u-py-1.5 u-text-xs',
-  md: 'u-py-2.5 u-text-md',
-  lg: 'u-py-4 u-text-base',
+  md: 'u-py-2 u-text-md',
+  lg: 'u-py-3 u-text-base',
 }
 
 const VARIANS = {
