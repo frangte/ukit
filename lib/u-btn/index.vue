@@ -55,7 +55,7 @@ const classes = computed(() => {
   cls.push(VARIANS_BG[props.varian])
   cls.push(VARIANS_TEXT[props.varian])
   cls.push(SIZES[props.size])
-  cls.push(props.block ? 'u-w-full u-justify-center' : '')
+  cls.push(props.block ? 'u-w-full u-justify-center' : 'u-w-max')
   cls.push(props.disabled ? 'u-cursor-not-allowed u-opacity-50' : 'u-cursor-pointer')
   return cls.join(' ')
 })
@@ -69,6 +69,7 @@ export const VARIANS_BG = {
   error: 'u-bg-red u-text-white u-border-b-2 u-border-red-dk2 hover:u-bg-red-lg1 active:u-bg-red-dk1',
   warning: 'u-bg-yellow u-text-gray-600 u-border-b-2 u-border-yellow-dk2 hover:u-bg-yellow-lg1 active:u-bg-yellow-dk1',
 }
+
 export const VARIANS_TEXT = {
   white: 'u-text-gray-900',
   primary: 'u-text-white',
