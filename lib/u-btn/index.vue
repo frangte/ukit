@@ -48,7 +48,7 @@ const props = defineProps({
   },
 })
 
-const base = 'u-font-medium u-rounded-md u-inline-flex'
+const base = 'u-border u-font-medium u-rounded-md u-inline-flex u-shadow-sm'
 
 const classes = computed(() => {
   const cls = [base]
@@ -63,11 +63,11 @@ const classes = computed(() => {
 
 <script>
 export const VARIANS_BG = {
-  white: 'u-bg-gray-100 u-text-gray-900 u-border-b-2 u-border-gray-300 hover:u-bg-gray-100 active:u-bg-gray-200',
-  primary: 'u-bg-primary u-text-white u-border-b-2 u-border-primary-dk2 active:u-bg-primary-dk1',
-  success: 'u-bg-green u-text-white u-border-b-2 u-border-green-dk2 hover:u-bg-green-lg1 active:u-bg-green-dk1',
-  error: 'u-bg-red u-text-white u-border-b-2 u-border-red-dk2 hover:u-bg-red-lg1 active:u-bg-red-dk1',
-  warning: 'u-bg-yellow u-text-gray-600 u-border-b-2 u-border-yellow-dk2 hover:u-bg-yellow-lg1 active:u-bg-yellow-dk1',
+  white: 'u-border u-bg-white u-text-gray-900 hover:u-bg-gray-100 active:u-bg-gray-200',
+  primary: 'u-bg-primary u-text-white u-border-primary active:u-bg-primary-dk1',
+  success: 'u-bg-green u-text-white u-border-green hover:u-bg-green-lg1 active:u-bg-green-dk1',
+  error: 'u-bg-red u-text-white u-border-red hover:u-bg-red-lg1 active:u-bg-red-dk1',
+  warning: 'u-bg-yellow u-text-gray-700 u-border-yellow hover:u-bg-yellow-lg1 active:u-bg-yellow-dk1',
 }
 
 export const VARIANS_TEXT = {

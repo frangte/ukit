@@ -16,7 +16,7 @@ export default defineConfig({
     lib: {
       name: 'ukit',
       entry: path.resolve(__dirname, 'lib/index.js'),
-      fileName: format => `ukit.${format}.js`,
+      fileName: format => `index.${format}.js`,
     },
     rollupOptions: {
       external: ['vue'],
