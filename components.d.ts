@@ -7,6 +7,13 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Dialog: typeof import('@headlessui/vue')['Dialog']
+    DialogPanel: typeof import('@headlessui/vue')['DialogPanel']
+    DialogTitle: typeof import('@headlessui/vue')['DialogTitle']
+    Listbox: typeof import('@headlessui/vue')['Listbox']
+    ListboxButton: typeof import('@headlessui/vue')['ListboxButton']
+    ListboxOption: typeof import('@headlessui/vue')['ListboxOption']
+    ListboxOptions: typeof import('@headlessui/vue')['ListboxOptions']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Tab: typeof import('@headlessui/vue')['Tab']
@@ -14,5 +21,7 @@ declare module '@vue/runtime-core' {
     TabList: typeof import('@headlessui/vue')['TabList']
     TabPanel: typeof import('@headlessui/vue')['TabPanel']
     TabPanels: typeof import('@headlessui/vue')['TabPanels']
+    TransitionChild: typeof import('@headlessui/vue')['TransitionChild']
+    TransitionRoot: typeof import('@headlessui/vue')['TransitionRoot']
   }
 }

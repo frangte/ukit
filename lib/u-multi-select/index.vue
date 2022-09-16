@@ -56,12 +56,6 @@
 </template>
 
 <script setup>
-import {
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-} from '@headlessui/vue'
 import CheckIcon from '../_svg/check.vue'
 
 const props = defineProps({

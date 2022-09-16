@@ -60,14 +60,6 @@
 </template>
 
 <script setup>
-import {
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-  TransitionChild,
-  TransitionRoot,
-} from '@headlessui/vue'
-
 const props = defineProps({
   modelValue: {
     type: Boolean,
