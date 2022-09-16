@@ -11,9 +11,11 @@
         <UBtn size="lg">
           Size xl
         </UBtn>
-        <UBtn block>
-          Block Button
-        </UBtn>
+        <div class="u-w-48">
+          <UBtn block>
+            Block Button
+          </UBtn>
+        </div>
       </div>
     </Variant>
 
